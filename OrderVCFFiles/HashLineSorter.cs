@@ -35,15 +35,15 @@ namespace OrderVCFFiles
             else
             { index = indexComma; }
 
-            string bit = line.Substring(13, index - 13).Replace("chr", "");
+            string bit = line.Substring(13, index - 13).ToLower().Replace("chr", "");
             if (bit.StartsWith("X") || bit.StartsWith("x"))
-            { a = 23; }
+            { a = 1000000; }
             else if (bit.StartsWith("Y") || bit.StartsWith("y"))
-            { a = 24; }
+            { a = 1000001; }
             else if (bit.StartsWith("M") || bit.StartsWith("m"))
-            { a = 25; }
+            { a = 1000002; }
             else if (bit.StartsWith("U") || bit.StartsWith("u"))
-            { a = 26; }
+            { a = 1000003; }
             else { a = Convert.ToInt32(bit); }
             return a;
         }
